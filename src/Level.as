@@ -1,6 +1,7 @@
 package  
 {
 	import org.flixel.*;
+	import org.flixel.plugin.photonstorm.*;
 	/**
 	 * ...
 	 * @author Amb054
@@ -57,6 +58,8 @@ package
 			
 			//Collide
 			
+			FlxCollision.pixelPerfectCheck()
+			FlxCollision.
 			FlxG.collide(layerStage, layerEntities);
 		}
 		
