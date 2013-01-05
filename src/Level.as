@@ -56,6 +56,7 @@ package
 			super.update();
 			
 			//Collide
+			
 			FlxG.collide(layerStage, layerEntities);
 		}
 		
