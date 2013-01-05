@@ -2,7 +2,7 @@ package
 {
 	/**
 	 * ...
-	 * @author Amb154 Balls
+	 * @author Amb154
 	 */
 	
 	import org.flixel.*; // Imports the flixel library
