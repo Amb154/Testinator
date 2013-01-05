@@ -1,1 +1,0 @@
-			{x:%SPRITE.X%,y:%SPRITE.Y%,id:"%SPRITE.ID%",cls:%SPRITE.CLASS%,custom:{value:"%SPRITE.VALUE%"},typeImg:%SPRITE.TYPE.IMAGEINFO%, typeParams:%SPRITE.TYPE.PARAMS%},
