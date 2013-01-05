@@ -3,7 +3,7 @@ package
 	import org.flixel.*;
 	/**
 	 * ...
-	 * @author Amb154 Balls
+	 * @author Amb154
 	 */
 	public class Level extends FlxGroup
 	{
