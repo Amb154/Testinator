@@ -12,8 +12,12 @@ package
 		public function LevelTest() {
 			var maps:FlxGroup = new FlxGroup();
 			var tempMap:FlxTilemap = new FlxTilemap();
+			var tempMapSky:FlxTilemap = new FlxTilemap();
 			// var skybox
 			tempMap.loadMap(new Globals.TestMap, Globals.Tiles, Globals.TILE_SIZE, Globals.TILE_SIZE, 0, 0, 0, 5);
+			tempMapSky.loadMap(new Globals.TestSkyMap, Globals.Tiles, Globals.TILE_SIZE, Globals.TILE_SIZE, 0, 0, 0, 5);
+			
+			maps.add(tempMapSky);
 			maps.add(tempMap);
 
 			super(0, 1000, 100, 20, maps);
