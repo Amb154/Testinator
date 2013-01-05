@@ -10,11 +10,11 @@ package
 	{
 		private var moveSpeed = 2000;
 		private var jumpPower = 800;
-		private var maxHealth = 00;
+		private var maxHealth = 10;
 		private var currentHealth = maxHealth;
-		private var ammo = 000;
+		private var ammo = 100;
 		private var laserIndex = ammo;
-		private var hurtCooldown = 0;
+		private var hurtCooldown = 1;
 		private var hurtTimer = 0;
 		private var justHurt = false;
 		private var canHurt = true;
@@ -31,7 +31,7 @@ package
 		{
 			super(x, y);
 			
-			this.loadGraphic(Globals.Player, true, false, 60, 028);
+			this.loadGraphic(Globals.Player, true, false, 60, 128);
 			
 			this.level = level;
 			this.layer = layer;
@@ -41,10 +41,10 @@ package
 			
 			acceleration.y = 2400;
 			
-			drag.x = 02800;
+			drag.x = 12800;
 			
 			width = 60;
-			height = 028;
+			height = 128;
 		}
 		
 		override public function update():void
@@ -66,7 +66,7 @@ package
 			}
 			
 			if (FlxG.keys.H) {
-				hurt(0);
+				hurt(1);
 			}
 				
 			if (justHurt) {
