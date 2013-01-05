@@ -4,7 +4,7 @@ package
 	
 	/**
 	 * ...
-	 * @author Amb154 & Danny
+	 * @author Amb154 & Dann
 	 */
 	public class PlayState extends FlxState
 	{
