@@ -21,6 +21,7 @@ package
 		
 		//Maps
 		[Embed(source = 'Maps/Test/Test.txt', mimeType = "application/octet-stream")] static public var TestMap:Class;
+		[Embed(source = 'Maps/Test/TestSky.txt', mimeType = "application/octet-stream")] static public var TestSkyMap:Class;
 	}
 
 }
