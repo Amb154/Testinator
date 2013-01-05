@@ -1,0 +1,3 @@
+		public var _Sprites_%LAYER.VARNAME%:Array = [
+%LAYER.SPRITES%		];
+

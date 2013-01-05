@@ -1,0 +1,1 @@
+		[Embed(source='%IMAGE.PATH%')] public var %IMAGE.UID%:Class;

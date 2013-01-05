@@ -1,0 +1,143 @@
+-- Maps are always compatible with newer application versions --
+
+SUGGESTION FOR PROTOTYPING:
+For prototyping, use one layer AND one tileset for non-collidable tiles and another pair for collidable tiles.
+This way you won't have to replace a lot of tiles when adding more non-collidable tiles.
+The non-collidables first collidable index could be set really high to forget about it.
+
+
+ALPHA 8.5
+* Right-click deletes the topmost sprite first on right-click
+* Preview of where the sprite will be when placed
+* 
+
+ALPHA 8.4
+* Sprite export to clipboard
+
+ALPHA 8
+
+IMPORTANT: READ THE FOLLOWING FIX
+
+* FIX: Solved error when saving non-animated images introduced in alpha 7.
+	Symptom: You can't open the map: "stream error"
+	Solution: You must open the .flan with a text editor (it's XML), and change all
+		numbers '4294967295' to '-1' (without inv. commas).
+		And use "Alpha 8" or higher where I solved it.
+
+
+* FIX: Pressing "Modify" on a non-animated sprite would unload it. Now it's ok.
+* Generated code now generates "onAddSpriteCallback" instead of "on<MAP NAME>AddSpriteCallback"
+* Moved the "single sprite" checkbox in the Sprite Type dialog up to make it more intuitive to be pressed before
+	choosing a tileset
+* corrected Sprite Type window size (now you can see the OK/Cancel buttons)
+^ now "bgColor" is saved in the map (see MapBase.as), in case you want to use different colors for diff levels.
+
+ALPHA 7.2
+* Fix in grids (map custom values/per-sprite properties):
+	They weren't saving any info on some special (most) conditions.
+
+ALPHA 7
+! IMPORTANT DIFFERENCE WITH ALPHA 6:
+	Custom map values are now not strings, could be anything (even functions).
+	Don't worry about incompatibility: it's fixed when imported, but take into account
+	next time you write a value in a grid (this also applies to sprite custom values).
+
++ Flood-fill bucket tool [UNDOABLE]
++ Status bar with pixel/tile position information.
++ Custom per-sprite parameters (property-value grid)
+
+^ Palette shows "No layer selected" instead of a blank frame on new maps.
+
+* Fixed undo/redo: Now disabled if nothing to undo/redo (I think it crashed before the fix, never noticed it)
+* Undo/redo text: Tells you what are you undoing or redoing
+* Palette shows the correct tileset as soon as you change between layers.
+* Currently selected layer set bold in the layer list to make it more obvious
+
+
+ALPHA 6
++ New tab: Custom stuff.
++	Allows you to add some custom string-string name-value pairs to the map.
++	And a custom function that takes a "*" parameter and returns a "*" value, to call whenever you want.
++ Tools menu with the option to easily associate .flan files with the application.
+* Abilityto add non-square 1-frame sprites.
+* Started to port it to be plugin-friendly (for import, export AND on-the-fly modification filters)
+
+ALPHA 5
++ Export/Import de sprite type lists, in case you changed a map and want to carry that list to other similar ones
+	(Experimental, save your work before trying!)
++ Full layer tile replacement (all of indexA to indexB).
+	It's awful and tedious but, for now, it's quite functional (specially for the "expansion" of tilesets)
++ Added map name to the title of the application for knowing what you're working on.
++ You can now set the "Package" for the exported ".as" files, to match the path you want.
+* Corrected generation of code for addition of sprites (_map.addSprites...)
+* Sprite tool: If not aligned to grid, there is no tile selection square when adding sprites (that usually bothers)
+* Warning message if you want to remove a layer (before it just dissapeared). I think it would be nice as this is not undoable.
+* If not grid aligned, sprites are put centered to the cursor (instead of top-left aligned as before)
+* Fixed weird-rect-for-text-labels bug (reverted to old revision of wxWidgets)
+* Fixed: deletion of sprite type didn't remove sprites of that type.
+* Fixed: Incorrect display of Parallax test rect if map was scrolled.
+
+ALPHA 4
++ SPRITES! YEAAAAH! (Basic thou, read below)
++ Layer width/height suggestions for parallaxing depending on scroll factors and main layer's width/height.
++ "Visibility" tab's options implementedd (now called "Layer visibility" tab)
++ Undo/Redo for painting PER TILE and nothing else (rather basic, see below)
++ You can pass a .flan as a parameter to open it. Also, the exe has an embedded icon for files, if you want to use it.
+  You can now do the "open always with" thing in Windows (Future: automatically do it with a menu option)
+* You can now type the "-" sign in spin controls (wxWidgets bugfix)
+* Generated map max bounds were off by 1 pixel
+^ Improvements in parallax testing code
+^ Screen box when testing parallaxing to have a better idea of what "you will see"
+
+v BUG: wxWidgets new trunk version makes the Editing layer text flicker on redraw.
+	If it doesn't get mouse moves, resize the window a bit.
+v BUG: Weird drawing when hovering with mouse while testing parallaxing.
+
+Sprites:
+	The type must be selected from the Sprites Tab for now. (Future: From palette)
+	Only addition and removal of sprites is enabled. Left/Right click respectively with sprite tool. (Future: Selectable/moveable)
+
+	Micro how-to:
+	Add Sprite type in the Sprites tab. Select it in the list.
+	In the palette window, select the little guy button (Sprite tool)
+
+	You can set "Align to grid when adding" in the sprite tab to center sprites to the grid.
+	NOTE: if you change offset.x/y in your sprite's Constructor, it's used to correct the position when loading.
+	NOTE2: you must call _map.addSpritesForLayer<LayerName>() when you want to add them.
+		You can pass a function that receives a FlxSprite as parameter, which is called each time a sprite is added.
+		You can do something like "if(objAdded is Coin)  { _coins.add(objAdded); }" and such there.
+	"Generate code to clipboard" to see what I'm talking about.
+
+Undo/Redo:
+	100 levels deep, feedback if it's not enough.
+	WARNING: Removing layers CLEARS the undo list (for anti-crash reasons)
+
+
+ALPHA 3
+* Highly improved rendering speed/less CPU eating
+* Hopefully fixed all scrolling and pixel offsets issues :)
++ Import and export single layer CSVs. You can load your previous work to Flan!
++ New properties tab: Screen
++ Parallax testing
++ Background color in generated code using a non-scrolling color-sprite (Thanks Adam for the idea!)
++ Layer limits outlined
+* Fixed incorrect name shown at "Editing layer" in the main window.
+* Can't draw on hidden layers
+
+ALPHA 2
++ Per layer parallaxing (offset + scroll factor)
++ Bounds information: How much pixels does the map use? (useful for FlxG.followBounds(), exported to AS3 and on the editor)
++ Optional generation of a base map class for OOP multiple map loading
++ Better help on Properties window tabs.
++ Moving one/all layer tiles by a given offset
+* Fixed error in scrolling
+
+
+ALPHA 1
++ Paint with left click and use pipette with right click.
++ Multiple layer editing
++ Save/load all layer info to a single .flan file (except for tileset images).
++ Set directories and easily export to CSV and AS3 code.
++ Generate code to add generated layers to a FlxState on clipboard.
++ Resize/Cropping of each layer individually
++ Hide/show layers while editing for comodity and performance						

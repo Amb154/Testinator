@@ -1,0 +1,6 @@
+This little game, named "Whacky Whacky" including:
+Source code, graphics, sounds and music are released
+under the MIT license.
+
+Copyright (C) 2009-2011 Martin Sebastian Wain - 2bam.com
+

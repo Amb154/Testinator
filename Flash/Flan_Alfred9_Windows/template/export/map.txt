@@ -1,0 +1,30 @@
+package %PACKAGE% {
+	import flash.geom.*;
+%MAP.IMPORTS%
+	
+	public class %MAP.VARNAME% {
+		public var info:Object;
+
+		function %MAP.VARNAME%() {
+			info = {
+				name:"%MAP.NAME%",
+				bounds:new Rectangle(%MAP.BOUNDSRECT%),
+				bgColor:0xff%MAP.BGCOLOR%,
+				custom:%MAP.CUSTOMOBJ%,
+				layers:[		//add in order
+%MAP.ALLLAYERS%
+				]
+			};
+		}
+//----------IMAGES----------
+%MAP.ALLIMAGES%
+		
+//----------SPRITES----------
+%MAP.ALLSPRITES%
+
+//----------CSV----------
+%MAP.ALLCSV%
+
+
+	}
+}

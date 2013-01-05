@@ -1,0 +1,2 @@
+		public var _CSV_%LAYER.VARNAME%:String = 
+%LAYER.CSV.STRING%;
