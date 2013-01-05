@@ -16,7 +16,7 @@ package
 			tempMap.loadMap(new Globals.TestMap, Globals.Tiles, Globals.TILE_SIZE, Globals.TILE_SIZE, 0, 0, 0, 5);
 			maps.add(tempMap);
 
-			super(0, 0000, 000, 20, maps);
+			super(0, 1000, 100, 20, maps);
 			
 		}
 		
