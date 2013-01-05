@@ -7,7 +7,7 @@ package
 	public class Enemyearwax 
 	{
 		
-		public function Enemyearwax() 
+		public function EnemyEarwax() 
 		{
 			
 		}
