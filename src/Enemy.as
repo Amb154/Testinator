@@ -3,7 +3,8 @@ package
 	import org.Flixel.*;
 	import mx.core.FlexSprite;
 	
-	public class Enemy extends FlxSprite 
+	
+	public class Enemy extends FlxExtendedSprite
 	{
 		public var jumpStrength:int = null;
 		public var moveSpeed:int = null;
