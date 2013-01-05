@@ -20,7 +20,7 @@ package
 		[Embed(source = 'IMG/Sprites/Player.png')] static public var Player:Class;
 		
 		//Maps
-		[Embed(source = 'Maps/Test.txt', mimeType = "application/octet-stream")] static public var TestMap:Class;
+		[Embed(source = 'Maps/Test/Test.txt', mimeType = "application/octet-stream")] static public var TestMap:Class;
 	}
 
 }
