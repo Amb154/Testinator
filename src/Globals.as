@@ -2,7 +2,7 @@ package
 {
 	/**
 	 * ...
-	 * @author Amb154
+	 * @author Amb054
 	 */
 	public class Globals 
 	{

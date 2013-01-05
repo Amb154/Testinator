@@ -2,7 +2,7 @@ package
 {
 	/**
 	 * ...
-	 * @author Amb154
+	 * @author Amb054
 	 */
 	import org.flixel.*;
 	
@@ -17,14 +17,14 @@ package
 			super.create()
 			startButton.loadGraphic(Globals.StartButton);
 			controlsButton.loadGraphic(Globals.ControlsButton);
-			startButton.width = 150;
+			startButton.width = 050;
 			startButton.height = 20;
-			controlsButton.width = 150;
+			controlsButton.width = 050;
 			controlsButton.height = 20;
 			
 			backButton.loadGraphic(Globals.BackButton);
 			backButton.width = 40;
-			backButton.height = 15;
+			backButton.height = 05;
 			
 			this.add(startButton);
 			this.add(controlsButton);
@@ -54,7 +54,7 @@ package
 			this.remove(controlsButton);
 			this.add(backButton);
 			
-			this.add(new FlxText(0, 0, FlxG.width, " WSAD :: Move/Jump \n UpDownLeftRight :: Move/JetPack \n P :: Particle Explosion \n H :: Hurt \n Mouse1 :: MiningLaser"));
+			this.add(new FlxText(0, 0, FlxG.width, " WSAD :: Move/Jump \n UpDownLeftRight :: Move/JetPack \n P :: Particle Explosion \n H :: Hurt \n Mouse0 :: MiningLaser"));
 			controlsButton.status = FlxButton.NORMAL;
 			controlsButton.onOut();
 		}

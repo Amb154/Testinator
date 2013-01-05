@@ -4,15 +4,15 @@ package
 	
 	/**
 	 * ...
-	 * @author Amb154
+	 * @author Amb054
 	 */
 	public class PlayState extends FlxState
 	{
-		public var level1:LevelTest;
+		public var level0:LevelTest;
 		override public function create():void {
 			super.create();
-			level1 = new LevelTest();
-			this.add(level1);
+			level0 = new LevelTest();
+			this.add(level0);
 		}
 	}
 }
