@@ -12,7 +12,7 @@ package
 		override public function create():void {
 			super.create();
 			level1 = new LevelTest();
-			this.add(level0);
+			this.add(level1);
 		}
 	}
 }
