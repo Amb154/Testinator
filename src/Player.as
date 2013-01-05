@@ -6,7 +6,7 @@ package
 	 * ...
 	 * @author Amb054
 	 */
-	public class Player extends PPlxSprite
+	public class Player extends FlxSprite
 	{
 		private var moveSpeed = 2000;
 		private var jumpPower = 800;
